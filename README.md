@@ -49,7 +49,7 @@ WORDPRESS_DB_NAME=wordpress
 
 ### Other
 
-* There's a Postman collection & env saved to prove functions: `$/tests/postman`.
+* There's a Postman collection & env saved to prove functions [here](https://github.com/pacjman/blog-wordpress-api/tree/master/tests/postman).
 
 ### References
 
