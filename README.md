@@ -32,7 +32,7 @@ WORDPRESS_DB_PASSWORD={{password}}
 WORDPRESS_DB_NAME={{name}}
 ```
 
-> For example, let's pretend you have a local [MySql](https://mysql.com/) instance ready. Then you would modify as follows:
+> For example, let's pretend you have a local [MySql](https://mysql.com/) instance ready. Then modify as follows:
 
 ``` javascript
 WORDPRESS_DB_HOST=localhost
@@ -41,7 +41,23 @@ WORDPRESS_DB_PASSWORD=superSecretPassword
 WORDPRESS_DB_NAME=wordpress
 ```
 
-> Don't forget to adjust the `user`, `password`, & `db` fields to match your configuration.
+> Don't forget to adjust these fields to match your configuration.
+
+### Build 
+
+* Build it.
+
+``` bash
+npm run build
+```
+
+### Start
+
+* Light it up!
+
+``` bash
+npm run start
+```
 
 ### Conclusion
 
@@ -49,7 +65,7 @@ WORDPRESS_DB_NAME=wordpress
 
 ### Other
 
-* There's a Postman collection & env saved to prove functions [here](https://github.com/pacjman/blog-wordpress-api/tree/master/tests/postman).
+* There's a [Postman](https://www.getpostman.com/) collection & env saved to prove functions [here](https://github.com/pacjman/blog-wordpress-api/tree/master/tests/postman).
 
 ### References
 
