@@ -47,7 +47,12 @@ WORDPRESS_DB_NAME=wordpress
 
 * So that's really it. Now you have a simple, read-only api wrapping the heart of ~~darkness~~ [Wordpress](https://wordpress.org/). Yay!
 
+### Other
+
+* There's a Postman collection & env saved to prove functions: `$/tests/postman`.
+
 ### References
 
 * [Developing a Restful Api w/ Node & TypeScript](https://mherman.org/blog/2016/11/05/developing-a-restful-api-with-node-and-typescript/)
 * [Express routing](https://expressjs.com/en/guide/routing.html)
+* [Get Postman for API development](https://www.getpostman.com/apps)
