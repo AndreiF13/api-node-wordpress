@@ -1,10 +1,13 @@
 {
   "name": "blog-wordpress-api",
   "version": "1.0.0",
-  "description": "",
+  "description": "A simple read-only api wrapper for Wordpress data access.",
   "main": "dist/index.js",
   "scripts": {
     "build": "node_modules/.bin/tsc",
+    "clean": "git clean -fxd",
+    "deploy": "sudo docker build -t pacjman/blog-wordpress-api .",
+    "dev": "sudo docker run -p 58100:8100 -d pacjman/blog-wordpress-api",
     "start": "node -r dotenv/config dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
