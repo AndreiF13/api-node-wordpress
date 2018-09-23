@@ -1,5 +1,5 @@
 # Use Node v8 LTS base image
-FROM node:8
+FROM node:8-alpine
 
 # Create app directory
 WORKDIR /usr/src/app
@@ -13,7 +13,7 @@ RUN npm install
 # bundle app source
 COPY . .
 
-EXPOSE 8100
+EXPOSE 58100
 
 CMD [ "npm", "start" ]
 
