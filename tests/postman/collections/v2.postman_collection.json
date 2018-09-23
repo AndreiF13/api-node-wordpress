@@ -1,0 +1,365 @@
+{
+	"info": {
+		"_postman_id": "3f22a871-2461-4fe5-aaeb-0c457e6c9969",
+		"name": "v2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/v2/blog/postbyname/{name}",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "f802f9ec-8310-4d40-bd0c-629884b2073e",
+						"type": "text/javascript",
+						"exec": [
+							"pm.variables.set(\"name\", 'surf-n-turf-gyros');"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "dacd1a7b-07fc-48b3-ae56-783277eaf7b2",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Content-Type is present\", function () {",
+							"    pm.response.to.have.header(\"Content-Type\");",
+							"});",
+							"",
+							"pm.test(\"response status is ok\", function () {",
+							"   pm.response.to.be.ok;",
+							"});",
+							"",
+							"pm.test(\"response body is not empty\", function () {",
+							"    pm.response.to.not.have.body(\"\");",
+							"});",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{blog-wordpress-api-key}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{blog-wordpress-api-url}}/v1/blog/postbyname/{{name}}",
+					"host": [
+						"{{blog-wordpress-api-url}}"
+					],
+					"path": [
+						"v1",
+						"blog",
+						"postbyname",
+						"{{name}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v2/blog/post/by-page/limit",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "499a955c-9875-430f-94b6-53a4ea4a65e6",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "e82c6cbc-c451-4518-840e-c5af220dac39",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Content-Type is present\", function () {",
+							"    pm.response.to.have.header(\"Content-Type\");",
+							"});",
+							"",
+							"pm.test(\"response status is ok\", function () {",
+							"   pm.response.to.be.ok;",
+							"});",
+							"",
+							"pm.test(\"response body is not empty\", function () {",
+							"    pm.response.to.not.have.body(\"\");",
+							"});",
+							"",
+							"pm.test(\"response body is 10\", function () {",
+							"    pm.response.to.have.body(10);",
+							"});",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{blog-wordpress-api-key}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{blog-wordpress-api-url}}/v2/blog/post/by-page/limit",
+					"host": [
+						"{{blog-wordpress-api-url}}"
+					],
+					"path": [
+						"v2",
+						"blog",
+						"post",
+						"by-page",
+						"limit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v2/blog/post/by-index/{index}",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "89c87544-9d28-4768-b94c-67829ed94c28",
+						"type": "text/javascript",
+						"exec": [
+							"pm.variables.set(\"index\", 22);"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "fc3d2842-9f1d-47d8-9d76-d1bca2492289",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Content-Type is present\", function () {",
+							"    pm.response.to.have.header(\"Content-Type\");",
+							"});",
+							"",
+							"pm.test(\"response status is ok\", function () {",
+							"   pm.response.to.be.ok;",
+							"});",
+							"",
+							"pm.test(\"response body is not empty\", function () {",
+							"    pm.response.to.not.have.body(\"\");",
+							"});",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{blog-wordpress-api-key}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{blog-wordpress-api-url}}/v2/blog/post/by-index/{{index}}",
+					"host": [
+						"{{blog-wordpress-api-url}}"
+					],
+					"path": [
+						"v2",
+						"blog",
+						"post",
+						"by-index",
+						"{{index}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v2/blog/post/count",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "499a955c-9875-430f-94b6-53a4ea4a65e6",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "2a944586-4ae8-45a7-832b-a3d87d6a1e4f",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Content-Type is present\", function () {",
+							"    pm.response.to.have.header(\"Content-Type\");",
+							"});",
+							"",
+							"//pm.test(\"Content-Type is application/json\", function () {",
+							"//    pm.response.to.be.header(\"Content-Type\", \"application/json\");",
+							"//});",
+							"",
+							"pm.test(\"response status is ok\", function () {",
+							"   pm.response.to.be.ok;",
+							"});",
+							"",
+							"pm.test(\"response body is not empty\", function () {",
+							"    pm.response.to.not.have.body(\"\");",
+							"});",
+							"",
+							"pm.test(\"response body is expected count\", function () {",
+							"    var json = pm.response.json();",
+							"    pm.expect(json.post_count).to.eql(228);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{blog-wordpress-api-key}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{blog-wordpress-api-url}}/v2/blog/post/count",
+					"host": [
+						"{{blog-wordpress-api-url}}"
+					],
+					"path": [
+						"v2",
+						"blog",
+						"post",
+						"count"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v2/blog/post/litany",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "499a955c-9875-430f-94b6-53a4ea4a65e6",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "cbfc5483-ae62-4f64-9442-a011283b1869",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Content-Type is present\", function () {",
+							"    pm.response.to.have.header(\"Content-Type\");",
+							"});",
+							"",
+							"pm.test(\"response status is ok\", function () {",
+							"   pm.response.to.be.ok;",
+							"});",
+							"",
+							"pm.test(\"response body is not empty\", function () {",
+							"    pm.response.to.not.have.body(\"\");",
+							"});",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{blog-wordpress-api-key}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{blog-wordpress-api-url}}/v2/blog/post/litany",
+					"host": [
+						"{{blog-wordpress-api-url}}"
+					],
+					"path": [
+						"v2",
+						"blog",
+						"post",
+						"litany"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v2/ping",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8ad28bde-4570-417d-9c16-7bec687f63e0",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Content-Type is present\", function () {",
+							"    pm.response.to.have.header(\"Content-Type\");",
+							"});",
+							"",
+							"pm.test(\"response status is ok\", function () {",
+							"   pm.response.to.be.ok;",
+							"});",
+							"",
+							"pm.test(\"response body is not empty\", function () {",
+							"    pm.response.to.not.have.body(\"\");",
+							"});",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{blog-wordpress-api-key}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{blog-wordpress-api-url}}/v2/ping",
+					"host": [
+						"{{blog-wordpress-api-url}}"
+					],
+					"path": [
+						"v2",
+						"ping"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

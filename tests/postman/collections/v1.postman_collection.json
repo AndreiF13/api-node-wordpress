@@ -1,0 +1,337 @@
+{
+	"info": {
+		"_postman_id": "29f059a9-fcb0-47c1-9433-6b8d0f5f2ae5",
+		"name": "v1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/v1/blog/postbyname/{name}",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "f802f9ec-8310-4d40-bd0c-629884b2073e",
+						"type": "text/javascript",
+						"exec": [
+							"pm.variables.set(\"name\", 'surf-n-turf-gyros');"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "8b1fa635-e329-460e-b8f1-fb65ae562352",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response status is ok\", function () {",
+							"",
+							"    pm.response.to.be.ok;",
+							"   ",
+							"    pm.test(\"Content-Type is present\", function () {",
+							"        pm.response.to.have.header(\"Content-Type\");",
+							"    });",
+							"      ",
+							"    pm.test(\"response body is not empty\", function () {",
+							"        pm.response.to.not.have.body(\"\");",
+							"    });",
+							"",
+							"});",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{blog-wordpress-api-key}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{blog-wordpress-api-url}}/v1/blog/postbyname/{{name}}",
+					"host": [
+						"{{blog-wordpress-api-url}}"
+					],
+					"path": [
+						"v1",
+						"blog",
+						"postbyname",
+						"{{name}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/blog/postbypagelimit",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "499a955c-9875-430f-94b6-53a4ea4a65e6",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "3e1fbd23-940d-4c23-ad5b-b582edfd2d04",
+						"type": "text/javascript",
+						"exec": [
+							"",
+							"pm.test(\"response status is ok\", function () {",
+							"    ",
+							"    pm.response.to.be.ok;",
+							"   ",
+							"    pm.test(\"Content-Type is present\", function () {",
+							"        pm.response.to.have.header(\"Content-Type\");",
+							"    });",
+							"   ",
+							"    pm.test(\"response body is not empty\", function () {",
+							"        pm.response.to.not.have.body(\"\");",
+							"    });",
+							"    ",
+							"    pm.test(\"response body is 10\", function () {",
+							"        pm.response.to.have.body(10);",
+							"    });",
+							"",
+							"});",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{blog-wordpress-api-key}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{blog-wordpress-api-url}}/v1/blog/postbypagelimit",
+					"host": [
+						"{{blog-wordpress-api-url}}"
+					],
+					"path": [
+						"v1",
+						"blog",
+						"postbypagelimit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/blog/postbypagenumber",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "499a955c-9875-430f-94b6-53a4ea4a65e6",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "43dd1604-ce74-4853-a0e1-0741f5be55c4",
+						"type": "text/javascript",
+						"exec": [
+							"",
+							"pm.test(\"response status is ok\", function () {",
+							" ",
+							"    pm.response.to.be.ok;",
+							"  ",
+							"    pm.test(\"Content-Type is present\", function () {",
+							"        pm.response.to.have.header(\"Content-Type\");",
+							"    });",
+							"  ",
+							"    pm.test(\"response body is not empty\", function () {",
+							"        pm.response.to.not.have.body(\"\");",
+							"    });",
+							"",
+							"});",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{blog-wordpress-api-key}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{blog-wordpress-api-url}}/v1/blog/postbypagenumber?postbypagelimit=10&pagenumber=22",
+					"host": [
+						"{{blog-wordpress-api-url}}"
+					],
+					"path": [
+						"v1",
+						"blog",
+						"postbypagenumber"
+					],
+					"query": [
+						{
+							"key": "postbypagelimit",
+							"value": "10"
+						},
+						{
+							"key": "pagenumber",
+							"value": "22"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/blog/postcount",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "499a955c-9875-430f-94b6-53a4ea4a65e6",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "d95534e9-d3e0-46b3-bd07-bf0470564b93",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response status is ok\", function () {",
+							"    ",
+							"    pm.response.to.be.ok;",
+							"",
+							"    pm.test(\"Content-Type is present\", function () {",
+							"        pm.response.to.have.header(\"Content-Type\");",
+							"    });",
+							"    ",
+							"    //pm.test(\"Content-Type is application/json\", function () {",
+							"    //    pm.response.to.be.header(\"Content-Type\", \"application/json\");",
+							"    //});    ",
+							"",
+							"    pm.test(\"response body is not empty\", function () {",
+							"        pm.response.to.not.have.body(\"\");",
+							"    });",
+							"    ",
+							"    pm.test(\"response body is expected count\", function () {",
+							"        pm.expect(pm.response.text()).to.eql('228');",
+							"    });",
+							"    ",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{blog-wordpress-api-key}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{blog-wordpress-api-url}}/v1/blog/postcount",
+					"host": [
+						"{{blog-wordpress-api-url}}"
+					],
+					"path": [
+						"v1",
+						"blog",
+						"postcount"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/blog/postlitany",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "499a955c-9875-430f-94b6-53a4ea4a65e6",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "0475e519-d087-4f1e-bed5-9eefb75a9712",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response status is ok\", function () {",
+							"",
+							"    pm.response.to.be.ok;",
+							"       ",
+							"    pm.test(\"Content-Type is present\", function () {",
+							"        pm.response.to.have.header(\"Content-Type\");",
+							"    });",
+							"    ",
+							"    pm.test(\"response body is not empty\", function () {",
+							"        pm.response.to.not.have.body(\"\");",
+							"    });",
+							"",
+							"});",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{blog-wordpress-api-key}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{blog-wordpress-api-url}}/v1/blog/postlitany",
+					"host": [
+						"{{blog-wordpress-api-url}}"
+					],
+					"path": [
+						"v1",
+						"blog",
+						"postlitany"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
