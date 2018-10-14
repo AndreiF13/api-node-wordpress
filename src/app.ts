@@ -147,7 +147,7 @@ class app {
           console.warn('no result.');
         }
             
-        return res.json(result);
+        return res.json(result[0]);
 
       });
 
