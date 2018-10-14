@@ -1,6 +1,6 @@
 {
   "name": "blog-wordpress-api",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A simple read-only api wrapper for Wordpress data access.",
   "main": "dist/index.js",
   "scripts": {
